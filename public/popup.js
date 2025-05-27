@@ -15,8 +15,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
         const settings = { text, tagline };
 
-        chrome.storage.local.set({ extensionSettings: settings }, function() {
-            alert('Settings saved!');
-        });
+        if (typeof chrome !== 'undefined' && chrome.storage && chrome.runtime) {
+            chrome.storage.local.set({ extensionSettings: settings }, function() {
+                console.log('Settings saved successfully.');
+                
+            });
+        } else {
+            console.error('Chrome APIs are not available.');
+        }
     });
 });
