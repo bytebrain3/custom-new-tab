@@ -1,0 +1,15 @@
+{
+    "manifest_version": 3,
+    "name": "Custom New Tab Art",
+    "version": "1.0",
+    "description": "A custom new tab page with art and links.",
+    "chrome_url_overrides": {
+        "newtab": "index.html"
+    },
+    "action": {
+        "default_popup": "popup.html"
+    },
+    "permissions": [
+        "storage"
+    ]
+}
